@@ -1,9 +1,27 @@
-= campfire_bot
+= Campfire Bot
 
-Description goes here.
+This is a Campfire bot heavily inspired by http://github.com/ichverstehe/isaac
+
+== How To User
+
+  require "rubygems"
+  require "campfire_bot"
+
+  # Configuration
+  config do |c|
+    c.username = "username"
+    c.password = "password"
+    c.subdomain = "subdomain"
+    c.room = "room"
+  end
+
+  # Events
+  on(/^How are you?/) do
+    msg("Im very well thank-you")
+  end
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
@@ -14,4 +32,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 reddavis. See LICENSE for details.
+Copyright (c) 2010 Red Davis. See LICENSE for details.
