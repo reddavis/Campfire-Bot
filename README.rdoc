@@ -2,6 +2,10 @@
 
 This is a Campfire bot heavily inspired by http://github.com/ichverstehe/isaac
 
+== How To Install
+
+  sudo gem install campfire_bot
+
 == How To User
 
   require "rubygems"
