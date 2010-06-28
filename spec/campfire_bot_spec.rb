@@ -7,7 +7,7 @@ describe "CampfireBot" do
     campfire.stub!(:find_room_by_name).and_return(@room)
     @campfire = Tinder::Campfire.stub!(:new).and_return(campfire)
     @bot = Campfire::Bot.new
-    @bot.config {}
+    @bot.login {}
   end
 
   describe "Sending a message" do
