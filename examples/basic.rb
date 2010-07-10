@@ -1,13 +1,17 @@
 require 'rubygems'
 require File.expand_path(File.dirname(__FILE__) + "/../lib/campfire_bot")
 
-config do |c|
-  c.username = "username"
-  c.password = "password"
-  c.subdomain = "subdomain"
-  c.room = "room"
-end
+Campfire::Bot.config do |bot|
+  # Login
+  bot.login do |l|
+    l.username = "username"
+    l.password = "password"
+    l.subdomain = "subdomain"
+    l.room = "room"
+  end
 
-on(/^hello/) do
-  msg("Hello to you to")
-end
+  # Events
+  bot.on(/^How are you?/) do
+    msg("Im very well thank-you")
+  end
+end.start
