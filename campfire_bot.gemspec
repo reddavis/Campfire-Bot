@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{campfire_bot}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-06-02}
+  s.date = %q{2010-07-10}
   s.description = %q{Create bots in your Campfires}
   s.email = %q{reddavis@gmail.com}
   s.extra_rdoc_files = [
@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "campfire_bot.gemspec",
      "examples/basic.rb",
      "lib/campfire_bot.rb",
-     "lib/campfire_bot/bot.rb",
      "spec/campfire_bot_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
