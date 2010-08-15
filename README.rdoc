@@ -22,7 +22,7 @@ This is a Campfire bot heavily inspired by http://github.com/ichverstehe/isaac
 
     # Events
     bot.on(/^How are you?/) do
-      msg("Im very well thank-you")
+      bot.msg("Im very well thank-you")
     end
   end.start
 

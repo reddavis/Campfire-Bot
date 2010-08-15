@@ -12,6 +12,6 @@ Campfire::Bot.config do |bot|
 
   # Events
   bot.on(/^How are you?/) do
-    msg("Im very well thank-you")
+    bot.msg("Im very well thank-you")
   end
 end.start
