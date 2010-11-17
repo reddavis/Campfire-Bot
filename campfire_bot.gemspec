@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = %q{reddavis@gmail.com}
   s.homepage = %q{http://github.com/reddavis/campfire_bot}
 
-  s.add_dependency "tinder", "~> 1.4.0"
+  s.add_dependency "tinder", "1.4.0"
 #  s.add_dependency "i18n",
 
   s.add_development_dependency "rspec", "~> 2.1.0"
