@@ -1,13 +1,8 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$:.unshift(File.dirname(__FILE__))
+$:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-## Need some more tests ##
+require "campfire_bot"
+require "rspec"
 
-require 'rubygems'
-require 'campfire_bot'
-require 'spec'
-require 'spec/autorun'
-
-Spec::Runner.configure do |config|
-
+RSpec.configure do |config|
 end

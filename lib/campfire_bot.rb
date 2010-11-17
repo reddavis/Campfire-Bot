@@ -3,6 +3,8 @@ require "tinder"
 
 module Campfire
   class Bot
+    VERSION = "0.0.2"
+
     class << self
       def config
         @bot = new
@@ -18,7 +20,7 @@ module Campfire
     def login(&block)
       config = Config.new
       block.call(config)
-      @campfire = Tinder::Campfire.new(config.subdomain, :username => config.username, :password => config.password).find_room_by_name(config.room)
+      @campfire = Tinder::Campfire.new(config.subdomain, login_credentials(config)).find_room_by_name(config.room)
     end
 
     def start
@@ -44,11 +46,19 @@ module Campfire
 
     private
 
+    def login_credentials(config)
+      if config.token
+        { :token => config.token }
+      else
+        { :username => config.username, :password => config.password }
+      end
+    end
+
     def find_event(command)
       @events.find {|event| command.match(event.regex)}
     end
   end
 
   class Event < Struct.new(:regex, :action); end
-  class Config < Struct.new(:username, :password, :subdomain, :room); end
+  class Config < Struct.new(:username, :password, :subdomain, :room, :token); end
 end

@@ -1,0 +1,52 @@
+PATH
+  remote: .
+  specs:
+    campfire_bot (0.0.2)
+      tinder (~> 1.4.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.3)
+    addressable (2.2.2)
+    diff-lcs (1.1.2)
+    eventmachine (0.12.10)
+    faraday (0.5.3)
+      addressable (~> 2.2.2)
+      multipart-post (~> 1.0.1)
+      rack (>= 1.1.0, < 2)
+    mime-types (1.16)
+    multipart-post (1.0.1)
+    rack (1.2.1)
+    rake (0.8.7)
+    roauth (0.0.3)
+    rspec (2.1.0)
+      rspec-core (~> 2.1.0)
+      rspec-expectations (~> 2.1.0)
+      rspec-mocks (~> 2.1.0)
+    rspec-core (2.1.0)
+    rspec-expectations (2.1.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.1.0)
+    tinder (1.4.2)
+      activesupport
+      eventmachine
+      faraday (~> 0.5.1)
+      mime-types
+      multipart-post
+      twitter-stream
+    twitter-stream (0.1.10)
+      eventmachine (>= 0.12.8)
+      roauth (>= 0.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  campfire_bot!
+  rake (~> 0.8.7)
+  rspec (~> 2.1.0)
+  tinder (~> 1.4.0)
+
+METADATA
+  version: 1.0.6
