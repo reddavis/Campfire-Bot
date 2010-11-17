@@ -25,10 +25,31 @@ This is a Campfire bot heavily inspired by http://github.com/ichverstehe/isaac
       end
 
       # Events
-      bot.on(/^How are you?/) do |x|
-        x.msg("Im very well thank-you")
+      bot.on(/^How are you?/) do |room, message|
+        room.speak("Im very sad thank-you")
+        room.play("trombone")
+        room.paste("This is a paste")
+        room.upload("/path/to/file.jpg")
       end
     end.start
+
+Message object gives you a hash of details about the message
+
+    {
+      "room_id" => 123456,
+      "created_at" => Wed Nov 17 20:06:44 +0000 2010,
+      "body" => "!go",
+      "id" => 12345,
+      "type" => "TextMessage",
+      "user" => {
+        "name" => "Red",
+        "created_at" => Tue Nov 16 13:48:19 +0000 2010,
+        "admin" => true,
+        "id" => 1111,
+        "type" => "Member",
+        "email_address" => "red@railslove.com"
+      }
+    }
 
 ## Note on Patches/Pull Requests
 

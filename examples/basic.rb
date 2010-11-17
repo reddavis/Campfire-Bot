@@ -11,7 +11,10 @@ Campfire::Bot.config do |bot|
   end
 
   # Events
-  bot.on(/^How are you?/) do |x|
-    x.bot.msg("Im very well thank-you")
+  bot.on(/^How are you?/) do |room, message|
+    room.speak("Im very sad thank-you")
+    room.play("trombone")
+    room.paste("This is a paste")
+    room.upload("/path/to/file.jpg")
   end
 end.start

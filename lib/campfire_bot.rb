@@ -25,12 +25,8 @@ module Campfire
       raise "You need to configure me" unless @campfire
 
       @campfire.listen do |line|
-        evaluate(line[:body]) if line[:body]
+        evaluate(line) if line[:body]
       end
-    end
-
-    def msg(text)
-      @campfire.speak(text)
     end
 
     def on(regex, &block)
@@ -38,8 +34,8 @@ module Campfire
     end
 
     def evaluate(message)
-      if event = find_event(message)
-        event.action.call(self)
+      if event = find_event(message[:body])
+        event.action.call(@campfire, message)
       end
     end
 
