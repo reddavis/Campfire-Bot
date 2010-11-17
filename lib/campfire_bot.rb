@@ -3,18 +3,16 @@ require "tinder"
 
 module Campfire
   class Bot
-    VERSION = "0.0.3"
-
     class << self
-      def config
-        @bot = new
-        yield(@bot)
-        @bot
+      def config(&block)
+        new(&block)
       end
     end
 
-    def initialize
+    def initialize(&block)
       @events = []
+
+      block.call(self) if block_given?
     end
 
     def login(&block)
@@ -25,6 +23,7 @@ module Campfire
 
     def start
       raise "You need to configure me" unless @campfire
+
       @campfire.listen do |line|
         evaluate(line[:body]) if line[:body]
       end
@@ -40,7 +39,7 @@ module Campfire
 
     def evaluate(message)
       if event = find_event(message)
-        event.action.call
+        event.action.call(self)
       end
     end
 
@@ -55,7 +54,7 @@ module Campfire
     end
 
     def find_event(command)
-      @events.find {|event| command.match(event.regex)}
+      @events.find {|event| command.match(event.regex) }
     end
   end
 
